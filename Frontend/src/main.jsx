@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
+//import App from "./App.jsx";
 import "./index.css";
 import {
   createBrowserRouter,
@@ -25,6 +25,7 @@ import BulkUpload from "./Components/BulkUpload.jsx";
 import SearchPeople from "./Components/SearchPeople.jsx";
 import Meeting from "./Components/Meeting.jsx";
 import Feedback from "./Components/Feedback.jsx";
+import YearbookPage from "./pages/YearbookPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -79,6 +80,10 @@ const router = createBrowserRouter([
       {
         path: "/meeting",
         element: <Meeting />,
+      },
+      {
+        path: "/yearbook",
+        element: <YearbookPage/>,
       },
       {
         path: "/feedback",
