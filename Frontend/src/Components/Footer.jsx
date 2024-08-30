@@ -25,6 +25,11 @@ function Footer() {
         </div>
       </div>
       <hr className="my-4 border-gray-200" />
+      <div className="quick-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact Us</a>
+        </div>
       <div className="text-center text-sm">
         <p>&copy; 2024 FutureConnect. All rights reserved.</p>
       </div>

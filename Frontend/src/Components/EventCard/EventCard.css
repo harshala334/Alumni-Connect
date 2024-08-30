@@ -1,0 +1,58 @@
+/* EventCard Styling */
+.event-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .date-box {
+    width: 100px;
+    text-align: center;
+  }
+  
+  .date-box h4 {
+    font-size: 36px;
+    margin: 0;
+  }
+  
+  .date-box span {
+    font-size: 16px;
+    color: #d18b00;
+  }
+  
+  .event-details {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  
+  .event-details h3 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .event-details p {
+    font-size: 16px;
+    color: #666;
+  }
+  
+  .read-more {
+    margin-left: 20px;
+  }
+  
+  .read-more-btn {
+    background-color: #d18b00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .read-more-btn:hover {
+    background-color: #c67900;
+  }
+  

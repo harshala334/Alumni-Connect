@@ -26,6 +26,14 @@ import SearchPeople from "./Components/SearchPeople.jsx";
 import Meeting from "./Components/Meeting.jsx";
 import Feedback from "./Components/Feedback.jsx";
 import YearbookPage from "./pages/YearbookPage.jsx";
+import EventDetails from "./Components/EventDetails/EventDetails.jsx";
+import EventCard from "./Components/EventCard/EventCard.jsx";
+import HomePage from "./Components/EventCard/HomePage.jsx";
+import MentorshipPage from "./Components/MentorshipPage.jsx";
+import MentorPage from "./Components/MentorPage.jsx";
+import App1 from "./Components/app/App1.jsx";
+import BecomeAMentor from "./Components/BecomeAMentor.jsx";
+import MenteeRegistrationForm from "./Components/MenteeRegistrationForm.jsx";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +46,7 @@ const router = createBrowserRouter([
       },
       {
         path: "",
-        element: <Home />,
+        element: <App1 />,
       },
       {
         path: "home",
@@ -89,6 +97,38 @@ const router = createBrowserRouter([
         path: "/feedback",
         element: <Feedback />,
       },
+      {
+        path: "/eventdetails",
+        element:<EventDetails/> ,
+      },
+      {
+        path: "/eventcard",
+        element:<EventCard/>,
+      },
+      {
+        path: "/homepage",
+        element: <HomePage/> ,
+      },
+      {
+        path: "/mentorship",
+        element:  <MentorshipPage/>
+      },
+      {
+        path: "/mentorshippage",
+        element:  <MentorPage/>
+      },
+      {
+        path: "/app1",
+        element:  <App1/>
+      },
+      {
+        path: "/becomeamentor",
+        element:  <BecomeAMentor/>
+      },
+      {
+        path: "/becomeamentee",
+        element:  <MenteeRegistrationForm/>
+      }
     ],
   },
   {
