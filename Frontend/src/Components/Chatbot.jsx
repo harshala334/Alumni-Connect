@@ -1,8 +1,10 @@
 import { useState } from 'react';
-import { FaComments, FaTimes } from 'react-icons/fa'; // Import FaComments and FaTimes icons from react-icons/fa
+import { FaComments, FaTimes } from 'react-icons/fa';
+import { Webchat, WebchatProvider, useClient } from '@botpress/webchat';
 
 const Chatbot = () => {
   const [isChatOpen, setChatOpen] = useState(false);
+  const client = useClient({ clientId: '5854f826-7fd7-411f-af2c-af11ec0cc757' }); // Replace with your actual clientId
 
   const handleClick = () => {
     setChatOpen(!isChatOpen); // Toggle chat window visibility
@@ -20,11 +22,11 @@ const Chatbot = () => {
     boxShadow: '0 2px 10px rgba(0, 0, 0, 0.2)',
     cursor: 'pointer',
     zIndex: '1000',
-    transition: 'background-color 0.3s ease'
+    transition: 'background-color 0.3s ease',
   };
 
   const chatbotHoverStyle = {
-    backgroundColor: '#0056b3'
+    backgroundColor: '#0056b3',
   };
 
   // Inline styles for the chat window
@@ -54,36 +56,6 @@ const Chatbot = () => {
     borderTopRightRadius: '10px',
   };
 
-  const chatBodyStyle = {
-    flex: '1',
-    padding: '10px',
-    overflowY: 'auto',
-  };
-
-  const chatFooterStyle = {
-    padding: '10px',
-    borderTop: '1px solid #ccc',
-    display: 'flex',
-    alignItems: 'center',
-  };
-
-  const chatInputStyle = {
-    flex: '1',
-    padding: '10px',
-    borderRadius: '20px',
-    border: '1px solid #ccc',
-    marginRight: '10px',
-  };
-
-  const chatButtonStyle = {
-    backgroundColor: '#007bff',
-    color: 'white',
-    borderRadius: '20px',
-    padding: '10px 15px',
-    border: 'none',
-    cursor: 'pointer',
-  };
-
   return (
     <>
       <div
@@ -101,14 +73,9 @@ const Chatbot = () => {
             <span>Chatbot</span>
             <FaTimes onClick={handleClick} style={{ cursor: 'pointer' }} />
           </div>
-          <div style={chatBodyStyle}>
-            {/* Chat messages will go here */}
-            <p>Welcome to the Chatbot! How can I assist you today?</p>
-          </div>
-          <div style={chatFooterStyle}>
-            <input type="text" placeholder="Type a message..." style={chatInputStyle} />
-            <button style={chatButtonStyle}>Send</button>
-          </div>
+          <WebchatProvider client={client}>
+            <Webchat />
+          </WebchatProvider>
         </div>
       )}
     </>
