@@ -78,10 +78,6 @@ npm start
 * [MongoDB](https://www.mongodb.com/download-center/community)
 * [Mongoose](https://mongoosejs.com/)
 
-## Authors
-* [**Sahil Ali**](https://www.linkedin.com/in/sahilali20/)
-* [**Syed Kumail Rizvi**](https://www.linkedin.com/in/syed-kumail-rizvi/)
-
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
