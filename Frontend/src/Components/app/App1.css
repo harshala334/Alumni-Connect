@@ -1,4 +1,4 @@
-General Styles body {
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ General Styles body {
 }
 
 header {
-    background-image: url("../public/assets/navbar.jpeg");
+    background-image: url("../src/assets/img/navbar.jpeg");
     color: white;
     padding: 15px 20px;
     display: flex;
@@ -62,7 +62,7 @@ nav ul li a:hover {
 }
 
 .hero {
-    background-image: url("../public/assets/intro1.webp");
+    background-image: url("../src/assets/img/intro1.webp");
     background-size: cover;
     background-position: center;
     color: white;
@@ -117,13 +117,13 @@ nav ul li a:hover {
     padding: 60px 20px;
     text-align: center;
     /* background-color: #fff; */
-    background-image: url('../assets/intro2.PNG');
+    background-image: url('../src/assets/img/intro2.PNG');
     margin-bottom: 20px;
     transition: background-color 0.5s, color 0.5s;
 }
 
 .introduction {
-    background-image: url("../assets/alumni.png");
+    background-image: url("../src/assets/img/alumni.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -184,7 +184,7 @@ nav ul li a:hover {
     font-style: italic;
     padding: 10px;
     /* background-color: #fff; */
-    background-image: url('../public/assets/intro3.png');
+    background-image: url('../src/assets/img/intro3.png');
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

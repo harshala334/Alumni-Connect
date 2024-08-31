@@ -71,81 +71,73 @@ const BecomeAMentor = () => {
           </Select>
         </FormField>
         <FormField>
-          <Label>On what topics do you think you can mentor? [Any Three] *</Label>
-          <CheckboxGroup>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Academic related doubts"
-                checked={formData.topics.includes('Academic related doubts')}
-                onChange={handleChange}
-              />
-              Academic related doubts
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Academic related projects"
-                checked={formData.topics.includes('Academic related projects')}
-                onChange={handleChange}
-              />
-              Academic related projects
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Guidance to develop technical skills with regards to my field of study"
-                checked={formData.topics.includes('Guidance to develop technical skills with regards to my field of study')}
-                onChange={handleChange}
-              />
-              Guidance to develop technical skills with regards to my field of study
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Guidance to develop technical skills with regards to my field of study"
-                checked={formData.topics.includes('Guidance to develop technical skills with regards to my field of study')}
-                onChange={handleChange}
-              />
-              Technology support/ guidance (programming languages, software)
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Guidance to develop technical skills with regards to my field of study"
-                checked={formData.topics.includes('Guidance to develop technical skills with regards to my field of study')}
-                onChange={handleChange}
-              />
-              Internship support/guidance
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Guidance to develop technical skills with regards to my field of study"
-                checked={formData.topics.includes('Guidance to develop technical skills with regards to my field of study')}
-                onChange={handleChange}
-              />
-              Guidance for Higher studies choices
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="topics"
-                value="Guidance to develop technical skills with regards to my field of study"
-                checked={formData.topics.includes('Guidance to develop technical skills with regards to my field of study')}
-                onChange={handleChange}
-              />
-              Other
-            </label>
-            {/* Add more topics as needed */}
-          </CheckboxGroup>
-        </FormField>
+  <Label>On what topics do you think you can mentor? [Any Three] *</Label>
+  <CheckboxGroup style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '10px', alignItems: 'center' }}>
+    <span>Academic related doubts</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Academic related doubts"
+      checked={formData.topics.includes('Academic related doubts')}
+      onChange={handleChange}
+    />
+
+    <span>Academic related projects</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Academic related projects"
+      checked={formData.topics.includes('Academic related projects')}
+      onChange={handleChange}
+    />
+
+    <span>Guidance to develop technical skills with regards to my field of study</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Guidance to develop technical skills with regards to my field of study"
+      checked={formData.topics.includes('Guidance to develop technical skills with regards to my field of study')}
+      onChange={handleChange}
+    />
+
+    <span>Technology support/guidance (programming languages, software)</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Technology support/guidance (programming languages, software)"
+      checked={formData.topics.includes('Technology support/guidance (programming languages, software)')}
+      onChange={handleChange}
+    />
+
+    <span>Internship support/guidance</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Internship support/guidance"
+      checked={formData.topics.includes('Internship support/guidance')}
+      onChange={handleChange}
+    />
+
+    <span>Guidance for Higher studies choices</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Guidance for Higher studies choices"
+      checked={formData.topics.includes('Guidance for Higher studies choices')}
+      onChange={handleChange}
+    />
+
+    <span>Other</span>
+    <Input
+      type="checkbox"
+      name="topics"
+      value="Other"
+      checked={formData.topics.includes('Other')}
+      onChange={handleChange}
+    />
+  </CheckboxGroup>
+</FormField>
+
         <FormField>
           <Label htmlFor="targetYear">Who would you like to mentor? *</Label>
           <Select
@@ -242,51 +234,46 @@ const BecomeAMentor = () => {
           />
         </FormField>
         <FormField>
-          <Label>According to you, what benefits can you get by mentoring someone? *</Label>
-          <CheckboxGroup>
-            <label>
-              <Input
-                type="checkbox"
-                name="benefits"
-                value="Get presence among alumni and students"
-                checked={formData.benefits.includes('Get presence among alumni and students')}
-                onChange={handleChange}
-              />
-              Get presence among alumni and students
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="benefits"
-                value="Increase my social media presence"
-                checked={formData.benefits.includes('Increase my social media presence')}
-                onChange={handleChange}
-              />
-              Increase my social media presence
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="benefits"
-                value="Opportunity for self reflection, and personal satisfaction"
-                checked={formData.benefits.includes('Opportunity for self reflection, and personal satisfaction')}
-                onChange={handleChange}
-              />
-              Opportunity for self reflection, and personal satisfaction
-            </label>
-            <label>
-              <Input
-                type="checkbox"
-                name="benefits"
-                value="Developing mentoring/coaching skills"
-                checked={formData.benefits.includes('Developing mentoring/coaching skills')}
-                onChange={handleChange}
-              />
-              Developing mentoring/coaching skills
-            </label>
-            {/* Add more benefits as needed */}
-          </CheckboxGroup>
-        </FormField>
+  <Label>According to you, what benefits can you get by mentoring someone? *</Label>
+  <CheckboxGroup style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '10px', alignItems: 'center' }}>
+    <span>Get presence among alumni and students</span>
+    <Input
+      type="checkbox"
+      name="benefits"
+      value="Get presence among alumni and students"
+      checked={formData.benefits.includes('Get presence among alumni and students')}
+      onChange={handleChange}
+    />
+
+    <span>Increase my social media presence</span>
+    <Input
+      type="checkbox"
+      name="benefits"
+      value="Increase my social media presence"
+      checked={formData.benefits.includes('Increase my social media presence')}
+      onChange={handleChange}
+    />
+
+    <span>Opportunity for self reflection, and personal satisfaction</span>
+    <Input
+      type="checkbox"
+      name="benefits"
+      value="Opportunity for self reflection, and personal satisfaction"
+      checked={formData.benefits.includes('Opportunity for self reflection, and personal satisfaction')}
+      onChange={handleChange}
+    />
+
+    <span>Developing mentoring/coaching skills</span>
+    <Input
+      type="checkbox"
+      name="benefits"
+      value="Developing mentoring/coaching skills"
+      checked={formData.benefits.includes('Developing mentoring/coaching skills')}
+      onChange={handleChange}
+    />
+  </CheckboxGroup>
+</FormField>
+
         <SubmitButton type="submit">Submit</SubmitButton>
       </Form>
     </PageWrapper>
@@ -297,6 +284,8 @@ export default BecomeAMentor;
 
 const PageWrapper = styled.div`
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
   padding: 2rem;
 `;
 
@@ -304,13 +293,14 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
+  max-width: 600px;
 `;
 
 const FormField = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
 const Label = styled.label`
   font-size: 1rem;
   margin-bottom: 0.5rem;

@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { FaAngleDown, FaExternalLinkSquareAlt, FaUniversity } from 'react-icons/fa';
+import  { useState, useRef } from 'react';
+import { FaAngleDown, FaUniversity } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Dropdown = () => {
@@ -14,12 +14,12 @@ const Dropdown = () => {
     setIsOpen(false);
   };
 
-  const handleOptionClick = (option) => {
-    // Handle the click on each option
-    console.log(`Clicked on option: ${option}`);
-    // Add further logic as needed
-    closeDropdown();
-  };
+  // const handleOptionClick = (option) => {
+  //   // Handle the click on each option
+  //   console.log(`Clicked on option: ${option}`);
+  //   // Add further logic as needed
+  //   closeDropdown();
+  // };
 
   const handleMouseEnter = () => {
     openDropdown();

@@ -71,7 +71,7 @@ function Topbar() {
   };
 
   return (
-    <div className="bg-slate-100 text-black p-4 flex flex-col lg:flex-row justify-between items-center">
+    <div className="bg-green-500 text-black p-4 flex flex-col lg:flex-row justify-between items-center">
       <div className="flex items-center mb-4 lg:mb-0">
         <Link to="/" className="flex items-center">
           <img
@@ -165,7 +165,7 @@ function Topbar() {
                 <FaListAlt className="mr-2 inline-block" /> Scholar Directory
               </Link>
               <Link
-                to="/search-people"
+                to="/scholarsnearby"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
                 <FaMapMarkerAlt className="mr-2 inline-block" /> Scholars Nearby
@@ -206,7 +206,7 @@ function Topbar() {
                 <FaUser className="mr-2 inline-block" /> Become a Mentee
               </Link>
               <Link
-                to="/search-people"
+                to="/mentorshipfeedback"
                 className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
               >
                 <FaUser className="mr-2 inline-block" /> Mentorship Feedback

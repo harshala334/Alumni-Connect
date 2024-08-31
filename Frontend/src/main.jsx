@@ -34,6 +34,10 @@ import MentorPage from "./Components/MentorPage.jsx";
 import App1 from "./Components/app/App1.jsx";
 import BecomeAMentor from "./Components/BecomeAMentor.jsx";
 import MenteeRegistrationForm from "./Components/MenteeRegistrationForm.jsx";
+import MentorshipFeedback from "./Components/Mentorshipfeedback.jsx";
+import MapComponent from "./Components/MapComponent.jsx";
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'leaflet/dist/leaflet.css';
 
 const router = createBrowserRouter([
   {
@@ -128,6 +132,14 @@ const router = createBrowserRouter([
       {
         path: "/becomeamentee",
         element:  <MenteeRegistrationForm/>
+      },
+      {
+        path: "/mentorshipfeedback",
+        element:  <MentorshipFeedback/>
+      },
+      {
+        path: "/scholarsnearby",
+        element:  <MapComponent/>
       }
     ],
   },

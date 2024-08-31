@@ -1,4 +1,4 @@
-//import React from 'react';
+//import React from 'react'
 import styled from 'styled-components';
 
 const MenteeRegistrationForm = () => {
@@ -18,59 +18,52 @@ const MenteeRegistrationForm = () => {
           <Input type="text" name="stream" placeholder="Ex. I am a Student or I am Software Developer at Accenture." required />
         </FormField>
         <FormField>
-          <Label>Which problem are you currently facing? (Any Three) *</Label>
-          <CheckboxGroup>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Need help with academic related doubts"
-              />
-              Need help with academic related doubts
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Need help in academic related projects"
-              />
-              Need help in academic related projects
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Need help and guidance to develop technical skills with regards to my field of studies"
-              />
-              Need help and guidance to develop technical skills with regards to my field of studies
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Need help with technology (programming languages, software)"
-              />
-              Need help with technology (programming languages, software)
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Need help to get internship"
-              />
-              Need help to get internship
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Need help for higher studies choices"
-              />
-              Need help for higher studies choices
-            </CheckboxLabel>
-            <CheckboxLabel>
-              <Checkbox
-                name="problems"
-                value="Other"
-              />
-              Other
-            </CheckboxLabel>
-          </CheckboxGroup>
-        </FormField>
+  <Label>Which problem are you currently facing? (Any Three) *</Label>
+  <CheckboxGroup style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '10px', alignItems: 'center' }}>
+    <span>Need help with academic related doubts</span>
+    <Checkbox
+      name="problems"
+      value="Need help with academic related doubts"
+    />
+
+    <span>Need help in academic related projects</span>
+    <Checkbox
+      name="problems"
+      value="Need help in academic related projects"
+    />
+
+    <span>Need help and guidance to develop technical skills with regards to my field of studies</span>
+    <Checkbox
+      name="problems"
+      value="Need help and guidance to develop technical skills with regards to my field of studies"
+    />
+
+    <span>Need help with technology (programming languages, software)</span>
+    <Checkbox
+      name="problems"
+      value="Need help with technology (programming languages, software)"
+    />
+
+    <span>Need help to get internship</span>
+    <Checkbox
+      name="problems"
+      value="Need help to get internship"
+    />
+
+    <span>Need help for higher studies choices</span>
+    <Checkbox
+      name="problems"
+      value="Need help for higher studies choices"
+    />
+
+    <span>Other</span>
+    <Checkbox
+      name="problems"
+      value="Other"
+    />
+  </CheckboxGroup>
+</FormField>
+
         <FormField>
           <Label>Please specify *</Label>
           <Input type="text" name="specify" />
@@ -80,30 +73,25 @@ const MenteeRegistrationForm = () => {
           <Input type="text" name="domains" placeholder="For ex : Information Tech, Advertisement, Medical, Education" />
         </FormField>
         <FormField>
-          <Label>What will be the most comfortable way for you to connect with your mentors? *</Label>
-          <RadioGroup>
-            <RadioLabel>
-              <Radio type="radio" name="connection" value="Video call" />
-              Video call
-            </RadioLabel>
-            <RadioLabel>
-              <Radio type="radio" name="connection" value="Voice Call" />
-              Voice Call
-            </RadioLabel>
-            <RadioLabel>
-              <Radio type="radio" name="connection" value="Text messaging" />
-              Text messaging
-            </RadioLabel>
-            <RadioLabel>
-              <Radio type="radio" name="connection" value="Any of the above" />
-              Any of the above
-            </RadioLabel>
-            <RadioLabel>
-              <Radio type="radio" name="connection" value="Other" />
-              Other
-            </RadioLabel>
-          </RadioGroup>
-        </FormField>
+  <Label>What will be the most comfortable way for you to connect with your mentors? *</Label>
+  <CheckboxGroup style={{ display: 'grid', gridTemplateColumns: '1fr auto', gap: '10px', alignItems: 'center' }}>
+    <span>Video call</span>
+    <Checkbox type="checkbox" name="connection" value="Video call" />
+
+    <span>Voice Call</span>
+    <Checkbox type="checkbox" name="connection" value="Voice Call" />
+
+    <span>Text messaging</span>
+    <Checkbox type="checkbox" name="connection" value="Text messaging" />
+
+    <span>Any of the above</span>
+    <Checkbox type="checkbox" name="connection" value="Any of the above" />
+
+    <span>Other</span>
+    <Checkbox type="checkbox" name="connection" value="Other" />
+  </CheckboxGroup>
+</FormField>
+
         <FormField>
           <Label>Frequency of Mentoring *</Label>
           <Input type="text" name="frequency" placeholder="e.g., Weekly" />
@@ -180,31 +168,11 @@ const CheckboxGroup = styled.div`
   gap: 0.5rem;
 `;
 
-const CheckboxLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
 
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
   margin: 0;
 `;
 
-const RadioGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-`;
-
-const RadioLabel = styled.label`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-`;
-
-const Radio = styled.input.attrs({ type: 'radio' })`
-  margin: 0;
-`;
 
 const SubmitButton = styled.button`
   background-color: green;
