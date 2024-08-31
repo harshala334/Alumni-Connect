@@ -15,7 +15,7 @@ import store from "./store/store";
 import Register from "./pages/Register.jsx";
 import Layout from "./Layout.jsx";
 import Login from "./pages/Login.jsx";
-import Dashboard from "./Components/Dashboard.jsx";
+//import Dashboard from "./Components/Dashboard.jsx";
 import Home from "./Components/Home.jsx";
 import Event from "./Components/Event.jsx";
 import Jobs from "./Components/Jobs.jsx";
@@ -36,6 +36,7 @@ import BecomeAMentor from "./Components/BecomeAMentor.jsx";
 import MenteeRegistrationForm from "./Components/MenteeRegistrationForm.jsx";
 import MentorshipFeedback from "./Components/Mentorshipfeedback.jsx";
 import MapComponent from "./Components/MapComponent.jsx";
+import App2 from "./Components/khadija/App2.jsx";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'leaflet/dist/leaflet.css';
 
@@ -60,10 +61,10 @@ const router = createBrowserRouter([
         path: "login",
         element: <Login />,
       },
-      {
-        path: "dashboard",
-        element: <Dashboard />,
-      },
+      // {
+      //   path: "dashboard",
+      //   element: <Dashboard />,
+      // },
 
       {
         path: "events",
@@ -124,6 +125,10 @@ const router = createBrowserRouter([
       {
         path: "/app1",
         element:  <App1/>
+      },
+      {
+        path: "/dashboard",
+        element:  <App2/>
       },
       {
         path: "/becomeamentor",
