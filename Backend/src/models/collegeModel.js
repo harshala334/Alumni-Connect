@@ -19,12 +19,10 @@ const CollegeSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  adminId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Admin",
-    required: true,
-  },
+ 
 });
 
 const College = mongoose.model("College", CollegeSchema);
-module.exports = { College };
+module.exports =  College ;
+
+

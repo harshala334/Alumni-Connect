@@ -17,31 +17,21 @@ function Login() {
     role: selectedRole,
   });
   const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   // Options for the role dropdown
   const roleOptions = [
     { value: "alumni", label: "Alumni" },
-    { value: "faculty", label: "Faculty" },
-    { value: "admin", label: "Admin" },
+    { value: "student", label: "Student" },
     { value: "college", label: "College" },
   ];
-  const navigate = useNavigate();
 
   // Handle role selection
   const handleRoleChange = (selectedOption) => {
     setSelectedRole(selectedOption);
-    console.log(selectedOption);
+    setUser((prev) => ({ ...prev, role: selectedOption?.value }));
   };
-  const userRole = selectedRole?.value;
-  // console.log(userRole)
 
-  var role = userRole;
-  console.log(role);
-  var userData = {
-    email: user.email,
-    password: user.password,
-    role: role,
-  };
-  // Handle form submission
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUser((prev) => ({ ...prev, [name]: value }));
@@ -56,9 +46,7 @@ function Login() {
     setLoading(true);
     const url = "http://localhost:8080/auth/login";
     try {
-      const response = await axios.post(url, userData);
-      console.log("Axios Response:", response);
-      console.log("Axios Data in store:", response.data);
+      const response = await axios.post(url, user);
       const payload = {
         ...(selectedRole.value === "alumni"
           ? response.data.alumni
@@ -68,37 +56,30 @@ function Login() {
 
       dispatch(login(payload));
       toast.success("Login Successful");
-
-      setLoading(false);
       navigate("/dashboard");
     } catch (err) {
       setLoading(false);
-      console.log("Handle error here:", err);
       if (err.response) {
         toast.error(err.response.data.message || err.message);
       } else {
         toast.error(err.message + "! Database server is down.");
       }
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
       <ToastContainer />
-      <div className="flex flex-col items-center mb-28 py-2">
-        <div className="flex flex-col justify-center items-center">
-          <h2 className="mt-5 text-center text-gray-900">
-            Sign in to your account
-          </h2>
-        </div>
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <input type="hidden" name="remember" defaultValue="true" />
-          <div className="rounded-md shadow-sm -space-y-px">
+      <div className="flex flex-col items-center justify-center min-h-screen py-6 bg-gray-100 mt-1">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6 mt-2">Sign in to your account</h2>
+        <form onSubmit={handleSubmit} className="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+          <div className="space-y-4">
             <div>
-              <label htmlFor="email-address" className="sr-only">
+              <label htmlFor="email-address" className="block text-sm font-medium text-gray-700">
                 Email address
               </label>
-
               <input
                 id="email-address"
                 name="email"
@@ -107,13 +88,12 @@ function Login() {
                 onChange={handleChange}
                 value={user.email}
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 placeholder="Email address"
-                // value =
               />
             </div>
             <div>
-              <label htmlFor="password" className="sr-only">
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
               <input
@@ -124,41 +104,37 @@ function Login() {
                 onChange={handleChange}
                 value={user.password}
                 required
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 placeholder="Password"
               />
             </div>
-            {/* role dropdown stylish with icons and good looking*/}
-
-            {/* role dropdown code goes here */}
             <div>
-              <label htmlFor="role" className="sr-only">
+              <label htmlFor="role" className="block text-sm font-medium text-gray-700">
                 Role
               </label>
               <Select
-                // required
                 id="role"
                 name="role"
                 options={roleOptions}
                 onChange={handleRoleChange}
                 value={selectedRole}
                 placeholder="Select your role"
-                className="mt-2 text-sm text-gray-900"
+                className="mt-2 text-sm"
+                classNamePrefix="select"
               />
             </div>
-          </div>
-
-          <div>
-            <button
-              type="submit"
-              disabled={loading}
-              // onSubmit={handleSubmit}
-              className={`${
-                loading && "hover:cursor-wait"
-              } group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-black-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
-            >
-              {loading ? <Loader text={"Please Wait.."} /> : "Sign In"}
-            </button>
+            <div>
+              <button
+                type="submit"
+                disabled={loading}
+                className={`w-full py-2 px-4 border border-transparent mt-3 text-sm font-medium rounded-md text-white bg-black hover:bg-black-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 ${
+                  loading ? "opacity-50 cursor-wait" : ""
+                }`}
+                style={{marginTop:10}}
+              >
+                {loading ? <Loader text="Please Wait.." /> : "Sign In"}
+              </button>
+            </div>
           </div>
         </form>
       </div>
