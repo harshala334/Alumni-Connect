@@ -184,7 +184,7 @@ nav ul li a:hover {
     font-style: italic;
     padding: 10px;
     /* background-color: #fff; */
-    background-image: url('../src/assets/img/intro3.png');
+    /* background-image: url('../src/assets/img/intro3.png'); */
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

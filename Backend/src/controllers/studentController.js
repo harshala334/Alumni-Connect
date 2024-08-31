@@ -1,22 +1,21 @@
 // controllers/registerController.js
-const Alumni = require("../models/alumniModel");
+const Student = require("../models/studentModel");
 const { User } = require("../models/user"); // Replace with your User model
 
-const registerController = async (req, res) => {
+const studentController = async (req, res) => {
   try {
     const {
       email,
       password,
-      startYear,
-      endYear,
-      degree,
-      branch,
-      rollNumber,
       firstName,
       lastName,
-      role,
+      course,
+      year,
+      cgpa,
+      studentId,
+      role
     } = req.body;
-    console.log("registerController 1");
+    console.log("registerController 2");
     // Check if the user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
@@ -33,29 +32,28 @@ const registerController = async (req, res) => {
       role,
     });
 
-    // Create the alumni profile
-    const alumni = await Alumni.create({
+    // Create the college profile
+    const student = await Student.create({
       user: newUser._id,
       email,
       password,
-      startYear,
-      endYear,
-      degree,
-      branch,
-      rollNumber,
       firstName,
       lastName,
+      course,
+      year,
+      cgpa,
+      studentId
     });
 
     res.status(201).json({
       status: "success",
       data: {
-        alumni,
+        student,
       },
     });
   } catch (error) {
     console.log("registerController 2");
-    console.error("Error during alumni registration:", error);
+    console.error("Error during college registration:", error);
     res.status(500).json({
       status: "fail",
       message: "Internal Server Error",
@@ -63,4 +61,4 @@ const registerController = async (req, res) => {
   }
 };
 
-module.exports = registerController;
+module.exports = studentController;

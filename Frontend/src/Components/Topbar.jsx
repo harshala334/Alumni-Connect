@@ -71,7 +71,7 @@ function Topbar() {
   };
 
   return (
-    <div className="bg-green-500 text-black p-4 flex flex-col lg:flex-row justify-between items-center">
+    <div className="text-black p-4 flex flex-col lg:flex-row justify-between items-center" style={{ background: "linear-gradient(45deg, var(--green), var(--bgblue))" }}>
       <div className="flex items-center mb-4 lg:mb-0">
         <Link to="/" className="flex items-center">
           <img
