@@ -32,11 +32,7 @@ The old version of this Web Application was class component-based.
 ### Installation
 1. Clone the repo
 ```sh
-git clone https://github.com/SahilAli8808/Alumni-Connect.git
-```
-or 
-```sh
-git clone https://github.com/Kumailrizvi786/Alumni-Connect.git
+git clone https://github.com/harshala334/Alumni-Connect.git
 ```
 1.2 Change directory
 ```sh   
